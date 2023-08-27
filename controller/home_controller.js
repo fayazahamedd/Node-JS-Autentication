@@ -66,29 +66,6 @@ module.exports.reset = async function (req, res) {
     res.render('back');
 }
 
-// module.exports.resetNew = async function (req, res) {
-//     const { email } = req.body;
-//     console.log(req.body.email);
-//     const user = await User.findOne({ email });
-//     try {
-//         if (!user) {
-//             req.flash('error', 'No user with that email address found');
-//             return res.redirect('/forgot-password');
-//         }
-//         // TODO: Send password reset email to user
-//         req.flash('success', 'Password reset email sent');
-//         console.log('correct')
-//         res.redirect('/users/signin');
-//     } catch (err) {
-//         console.error('Error in password reset:', err);
-//         req.flash('error', 'An error occurred');
-//         res.redirect('/forgot-password');
-//     }
-// }
-
-
-//Auth with google
-
 module.exports.resetNew = async function (req, res) {
     const { email } = req.body;
     console.log(req.body.email);
@@ -116,8 +93,8 @@ module.exports.resetNew = async function (req, res) {
             port: 587,
             secure: false,
             auth: {
-                user: "fayazahamed035@gmail.com",
-                pass: "ldnjydvrcomzzfuy",
+                user: "YOUR_CLIENT_EMAIL",
+                pass: "YOUR_CLIENT_PASS",
             }
         });
 
